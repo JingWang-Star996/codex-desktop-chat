@@ -2,6 +2,14 @@
 
 从 Windows 上的 Codex 桌面会话向用户指定的普通 Chat 发送一个有界任务，再收回完整文字结果。桌面原生工具负责发送和读回，插件负责保存任务状态、拦截重复发送和校验回复。
 
+## 一键部署
+
+复制下面这段提示词，粘贴到 Windows 上的 Codex 桌面会话。
+
+```text
+请帮我部署 ChatGPT 桌面直连插件。把 https://github.com/JingWang-Star996/codex-desktop-chat 下载到长期保留的本地目录，按 README 运行 scripts/install.ps1，确认当前会话具备桌面发送和读回工具，再按插件技能绑定我指定的专用 Chat。我会在 ChatGPT 里自己选择 Pro，并授权你只向我确认的聊天发送一条不含业务数据的连通测试。请收回完整回复并校验 SHA-256。以后我说“问下 ChatPro”，就默认用这个已绑定的桌面 Chat。
+```
+
 ## 安装
 
 需要 Node.js 22 或更新版本、PowerShell 7、支持插件命令的 Codex CLI，以及能访问 `send_message_to_thread` 和 `read_thread` 的 Codex 桌面会话。
