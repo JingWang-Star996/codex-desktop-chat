@@ -1,6 +1,6 @@
 ---
 name: call-desktop-chat
-description: 用户说“让chat帮忙”“叫chat看看”“问下chat”或让 ChatGPT/Pro 参与任务时，默认从本地 Work 或 Codex 调用已绑定的桌面 Chat 并收回结果，无需说“桌面”、插件名或打开浏览器。模型沿用用户选择，不能自动指定或保证 Pro。
+description: 用户说“让chat帮忙”“叫chat看看”“问下chat”或让 ChatGPT/Pro 参与任务时，默认由具备原生工具的 Codex 桌面会话调用已绑定的 Chat 并收回结果。支持 Codex 直接调用及外部助手交接。模型沿用用户选择，不能自动指定或保证 Pro。
 ---
 
 # 调用桌面 Chat
@@ -14,6 +14,10 @@ description: 用户说“让chat帮忙”“叫chat看看”“问下chat”或�
 默认使用桌面原生工具 `mcp__codex_app__send_message_to_thread` 和 `read_thread`。本插件只管理本地任务台账；它不直接发送消息。主协调者执行返回的 `native_action`，再把原生工具读回交给插件核验。不得把保存任务或生成调用参数称为已发送。
 
 不需要 Chrome、Playwright、API key、私有 ChatGPT API 或应用内部 IPC。不因工具未热加载自动打开网页。保留用户选择的协调模型。
+
+## 外部助手交接
+
+DSH、WorkBuddy 或其他助手可按 README 的任务包格式交接。承接任务的 Codex 会话先确认具备原生发送和读回工具，并核对可验证的用户授权。缺少接入时，由用户把任务包粘贴到 Codex 桌面；仅能启动 Codex CLI 或访问台账时，报告缺少的能力。按同一 `work_unit_id` 回传状态、结果或可访问的结果位置、SHA-256 和待处理项。
 
 ## 首次绑定
 

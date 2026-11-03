@@ -1,12 +1,12 @@
 {
   "name": "codex-desktop-chat",
   "version": "0.1.0",
-  "description": "让本地 Work 通过桌面原生工具调用已绑定的 Chat，保存结果并防止重复发送，无需打开浏览器。",
+  "description": "通过 Codex 桌面原生工具调用已绑定的 Chat，保存结果并防止重复发送。Codex 可直接调用，也可承接外部助手交来的任务。",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "ChatGPT 桌面直连",
-    "shortDescription": "本地 Work 调用桌面 Chat，无需浏览器",
+    "shortDescription": "通过 Codex 直接调用或接力调用桌面 Chat",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": ["通过已绑定的桌面 Chat 处理一个有界问题，并把完整回复带回当前任务。"]
